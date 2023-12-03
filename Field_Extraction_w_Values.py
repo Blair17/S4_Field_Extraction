@@ -148,7 +148,6 @@ cbar.set_ticks(ticks=[np.amax(data), 0, np.amin(data)],
                  labels=[f'{int(np.amax(data))}', '0', 
                          f'{int(np.amin(data))}'], 
                          fontsize=28)
-
 plt.tight_layout()
 
 if TEamp == 1:
