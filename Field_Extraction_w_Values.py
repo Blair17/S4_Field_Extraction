@@ -52,7 +52,6 @@ zmin = -500
 zmax = 700 - gratingthickness
 xmin = -period
 xmax = period
-
 xstep = 1
 zstep = 1
 
@@ -120,8 +119,6 @@ ax.contour(x, z, np.flipud(mask_alox), colors='k', linewidths=2)
 ax.set_xlabel('X Position (nm)', fontsize=28, fontweight='bold')
 ax.set_ylabel('Z Position (nm)', fontsize=28, fontweight='bold')
 ax.tick_params(axis='both', labelsize=25)
-
-### Plots red rectangle for accumulation layer ###
 
 # rect = patches.Rectangle(
 #     (-period, yheight),  # (x, y) position of the bottom-left corner of the box
