@@ -137,7 +137,6 @@ glass_label = r'$\bf{SiO_{2}}$'
 plt.xlim([xmin, xmax])
 # plt.text(0.05, 0.1, glass_label, fontsize=35, fontweight='bold', color='w', transform=ax.transAxes)
 # plt.text(0.05, 0.46, 'ITO', fontsize=35, fontweight='bold', color='w', transform=ax.transAxes)
-# plt.text(0.7, 0.1, f'{np.round(sum,2)}', fontsize=28, fontweight='bold', color='w', transform=ax.transAxes)
 
 cbar = fig.colorbar(k, pad=0.04)
 cbar.set_ticks(ticks=[np.amax(data), 0, np.amin(data)], 
