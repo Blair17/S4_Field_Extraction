@@ -3,14 +3,10 @@ import numpy as np
 import os 
 import scipy as scipy
 import scipy.ndimage
-import sys
-from mpl_toolkits.axes_grid1 import make_axes_locatable
 # import matplotlib.patches as patches
 from scipy.interpolate import LinearNDInterpolator
 
 def interpolate(x, y, array):
-    # x = np.linspace(610, 660, 1000)
-    # y = np.linspace(0, 1.0, 101)
     X, Y = np.meshgrid(x, y)
     x_interp = np.linspace(615, 655, 1000)
     y_interp = np.linspace(0.0, 1.00, 101)
@@ -113,7 +109,7 @@ data_cover = (np.sum(np.abs(data_field_cover)) / np.sum(np.abs(data)) )
 
 fig, ax = plt.subplots(figsize=[10,7])
 mycmap1 = plt.get_cmap('gnuplot2')
-k = ax.pcolor(x, z, np.flipud(data*(1)), cmap=mycmap1)
+k = ax.pcolor(x, z, np.flipud(data), cmap=mycmap1)
 ax.contour(x, z, np.flipud(mask_ITO), colors='k', linewidths=2)
 ax.contour(x, z, np.flipud(mask_alox), colors='k', linewidths=2)
 ax.set_xlabel('X Position (nm)', fontsize=28, fontweight='bold')
@@ -135,10 +131,7 @@ field_label_TM = r'$\bf{E_{z}} (a.u.)$'
 glass_label = r'$\bf{SiO_{2}}$'
 
 plt.xlim([xmin, xmax])
-# plt.text(0.05, 0.1, glass_label, fontsize=35, fontweight='bold', color='w', transform=ax.transAxes)
-# plt.text(0.05, 0.46, 'ITO', fontsize=35, fontweight='bold', color='w', transform=ax.transAxes)
-# plt.text(0.05, 0.8, 'Air', fontsize=35, fontweight='bold', color='w', transform=ax.transAxes)
-# plt.text(0.7, 0.1, f'{np.round(sum,2)}', fontsize=28, fontweight='bold', color='w', transform=ax.transAxes)
+plt.text(0.7, 0.1, f'{np.round(sum,2)}', fontsize=28, fontweight='bold', color='w', transform=ax.transAxes)
 
 cbar = fig.colorbar(k, pad=0.04)
 cbar.set_ticks(ticks=[np.amax(data), 0, np.amin(data)], 
