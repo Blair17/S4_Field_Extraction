@@ -3,7 +3,6 @@ import numpy as np
 import os 
 import scipy as scipy
 import scipy.ndimage
-# import matplotlib.patches as patches
 from scipy.interpolate import LinearNDInterpolator
 
 def interpolate(x, y, array):
@@ -115,16 +114,6 @@ ax.contour(x, z, np.flipud(mask_alox), colors='k', linewidths=2)
 ax.set_xlabel('X Position (nm)', fontsize=28, fontweight='bold')
 ax.set_ylabel('Z Position (nm)', fontsize=28, fontweight='bold')
 ax.tick_params(axis='both', labelsize=25)
-
-# rect = patches.Rectangle(
-#     (-period, yheight),  # (x, y) position of the bottom-left corner of the box
-#     subarray_width,  # Width of the box
-#     subarray_height,  # Height of the box
-#     linewidth=1,
-#     edgecolor='r',  # Red color for the box
-#     facecolor='none'  # No fill color
-# )
-# ax.add_patch(rect)
 
 field_label_TE = r'$\bf{E_{y}} (a.u.)$' 
 field_label_TM = r'$\bf{E_{z}} (a.u.)$' 
